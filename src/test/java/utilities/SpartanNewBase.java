@@ -14,12 +14,12 @@ public class SpartanNewBase {
     public static RequestSpecification requestSpec;
     public static ResponseSpecification responseSpec;
     public static RequestSpecification userSpec;
-    public static RequestSpecification adminSpec;
+
 
     @BeforeAll
     public static void init(){
-        //save baseurl inside this variable so that we dont need to type each http method.
-        baseURI = "http://44.195.19.167";
+        //save baseurl inside this variable so that we don't need to type each http method.
+        baseURI = "http://54.243.0.145";
         port = 7000;
         basePath ="/api";
 
@@ -38,13 +38,13 @@ public class SpartanNewBase {
        responseSpec = expect().statusCode(200)
                 .and()
                 .contentType(ContentType.JSON)
-                .logDetail(LogDetail.ALL);  //logging with response specficiation
+                .logDetail(LogDetail.ALL);  //logging with response specification
 
     }
 
     @AfterAll
     public static void close(){
-        //reset the info we set above ,method comes from restassured
+        //reset the info we set above ,method comes from RestAssured
         reset();
     }
 }
